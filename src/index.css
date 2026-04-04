@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Prevent blank text issue */
+body {
+  margin: 0;
+  color: #111; /* force visible text */
+  background: #fff;
+}
+
+/* Dark mode fallback
+html.dark body {
+  color: #f1f5f9;
+  background: #020617;
+} */

@@ -5,7 +5,7 @@ A modern and responsive **Finance Dashboard** built using **React + TypeScript +
 ---
 
 ## 🚀 Live Demo
-
+https://finance-dash-board-opal.vercel.app/
 
 
 ---
@@ -100,7 +100,7 @@ src/
 
 ```bash
 # Clone the repo
-git clone 
+git clone :- https://github.com/KrIsH9693/Finance_DashBoard.git
 
 # Navigate into project
 cd finance-dashboard

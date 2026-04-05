@@ -2,13 +2,16 @@ import {
   createContext,
   useContext,
   useState,
+  useEffect,
 } from "react";
 import type { ReactNode } from "react";
 import type { Transaction, Role } from "../types";
 
 interface AppContextType {
   transactions: Transaction[];
-  setTransactions: (t: Transaction[]) => void;
+  setTransactions: React.Dispatch<
+    React.SetStateAction<Transaction[]>
+  >; // ✅ FIX HERE
   role: Role;
   toggleRole: () => void;
 }
@@ -35,6 +38,18 @@ export const AppProvider = ({
       prev === "admin" ? "viewer" : "admin"
     );
   };
+
+  // ✅ SAVE TO LOCALSTORAGE (BONUS FIX)
+  useEffect(() => {
+    localStorage.setItem(
+      "transactions",
+      JSON.stringify(transactions)
+    );
+  }, [transactions]);
+
+  useEffect(() => {
+    localStorage.setItem("role", role);
+  }, [role]);
 
   return (
     <AppContext.Provider
